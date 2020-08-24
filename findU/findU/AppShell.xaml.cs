@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using findU.ViewModels;
+
 using findU.Views;
 using Xamarin.Forms;
 

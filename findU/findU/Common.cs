@@ -10,5 +10,7 @@ namespace findU
         public static string FirebaseURL = "https://test-1275d.firebaseio.com/";
 
         public static bool IsUserOnline;
+
+        public static int selectedUser=0;
     }
 }

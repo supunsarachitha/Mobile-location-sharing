@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using Xamarin.Forms;
-using findU.ViewModels;
+
 
 namespace findU.Views
 {
@@ -9,7 +9,6 @@ namespace findU.Views
         public ItemDetailPage()
         {
             InitializeComponent();
-            BindingContext = new ItemDetailViewModel();
         }
     }
 }

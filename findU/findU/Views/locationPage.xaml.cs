@@ -23,6 +23,7 @@ namespace findU.Views
         {
             InitializeComponent();
             map.IsShowingUser = true;
+
         }
 
         private async Task  getFriendLocation(int UserId)
@@ -40,9 +41,9 @@ namespace findU.Views
 
                     Pin pin = new Pin
                     {
-                        Label = "User 10",
-                        Address = "The city with a boardwalk",
-                        Type = PinType.Place,
+                        Label = FriendDetails.Name,
+                        Address = FriendDetails.IsOnline?"Online":"Offline",
+                        Type = PinType.SavedPin,
                         Position = position
                     };
                     map.Pins.Add(pin);
@@ -82,7 +83,7 @@ namespace findU.Views
         protected async override void OnAppearing()
         {
             mapVisible = true;
-            GetSendLocation(10);
+            GetSendLocation(Common.selectedUser);
             base.OnAppearing();
             //var allPersons = await firebaseHelper.GetAllPersons();
             //lstPersons.ItemsSource = allPersons;

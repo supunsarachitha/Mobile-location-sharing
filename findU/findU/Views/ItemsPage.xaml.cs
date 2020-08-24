@@ -9,25 +9,60 @@ using Xamarin.Forms.Xaml;
 
 using findU.Models;
 using findU.Views;
-using findU.ViewModels;
 
 namespace findU.Views
 {
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel _viewModel;
 
+        FirebaseHelper firebaseHelper = new FirebaseHelper();
         public ItemsPage()
         {
             InitializeComponent();
 
-            BindingContext = _viewModel = new ItemsViewModel();
+            bindData();
+        }
+
+        private async void bindData()
+        {
+            var res = await firebaseHelper.GetAllPersons();
+            ItemsListView.ItemsSource = res;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _viewModel.OnAppearing();
+        }
+
+
+        bool tapped = false;
+        private async void ItemsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (tapped)
+            {
+                return;
+            }
+            else
+            {
+                tapped = true;
+            }
+
+
+            if (e.CurrentSelection != null)
+            {
+                Person person = (Person)e.CurrentSelection.FirstOrDefault();
+                Common.selectedUser = person.PersonId;
+                ItemsListView.SelectedItem = null;
+
+                await Shell.Current.GoToAsync("locationPage");
+                tapped = false;
+
+                
+
+                
+            }
+
+           
         }
     }
 }

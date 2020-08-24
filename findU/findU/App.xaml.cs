@@ -14,7 +14,6 @@ namespace findU
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
 
 
             bool RES = Preferences.Get("isRegistered", false);
