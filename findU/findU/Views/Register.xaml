@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="findU.Views.Register">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Center" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="auto"/>
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Unique User Name" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Margin="10"></Label>
+            <Entry Text="" Grid.Column="1" Grid.Row="0" x:Name="txtUseName" VerticalOptions="Center" Margin="10"></Entry>
+            
+            <Button Text="start" x:Name="btnRegister" Clicked="btnRegister_Clicked" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="EndAndExpand"></Button>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

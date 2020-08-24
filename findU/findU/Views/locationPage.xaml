@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="findU.Views.locationPage"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <maps:Map x:Name="map" IsShowingUser="True" MapType="Street" TrafficEnabled="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label x:Name="txtLastUpdatedTime" />
+                <Label x:Name="txtMessage" />
+            </StackLayout>
+
+
+
+            
+            </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
